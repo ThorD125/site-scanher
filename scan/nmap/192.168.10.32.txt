@@ -1,0 +1,172 @@
+# Nmap 7.93 scan initiated Sun Nov 27 16:04:27 2022 as: nmap -oN ./scan/nmap/192.168.10.32.txt -r --open -v -A 192.168.10.32
+Nmap scan report for 192.168.10.32
+Host is up (0.025s latency).
+Not shown: 994 closed tcp ports (conn-refused)
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 96205fec481056b2a9853616abd4a394 (RSA)
+|   256 2214c40122eafcf8b2920c7210f78a1d (ECDSA)
+|_  256 88445048eeb77b49df4bdb078412b01b (ED25519)
+80/tcp   open  http    Apache httpd 2.4.54
+|_http-title: Did not follow redirect to http://group12web.hp.ti.howest.be:8000
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.54 (Debian)
+443/tcp  open  http    Apache httpd 2.4.54
+| http-methods: 
+|_  Supported Methods: POST OPTIONS HEAD GET
+|_http-title: Apache2 Debian Default Page: It works
+|_http-server-header: Apache/2.4.54 (Debian)
+8000/tcp open  http    (PHP 5.5)
+| http-robots.txt: 1 disallowed entry 
+|_/admin.php
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP, Help, LPDString, RPCCheck, SMBProgNeg, SSLSessionReq, Socks5: 
+|     HTTP/1.1 400 Bad Request
+|     Connection: close
+|   FourOhFourRequest: 
+|     HTTP/1.1 404 Not Found
+|     X-Powered-By: PHP/5.5
+|     Content-Security-Policy: default-src 'none'
+|     X-Content-Type-Options: nosniff
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 174
+|     Date: Sun, 27 Nov 2022 15:04:40 GMT
+|     Connection: close
+|     <!DOCTYPE html>
+|     <html lang="en">
+|     <head>
+|     <meta charset="utf-8">
+|     <title>Error</title>
+|     </head>
+|     <body>
+|     <pre>Cannot GET /nice%20ports%2C/Tri%6Eity.txt%2ebak</pre>
+|     </body>
+|     </html>
+|   GetRequest: 
+|     HTTP/1.1 302 Found
+|     X-Powered-By: PHP/5.5
+|     Location: /login.php
+|     Vary: Accept
+|     Content-Type: text/plain; charset=utf-8
+|     Content-Length: 32
+|     Date: Sun, 27 Nov 2022 15:04:40 GMT
+|     Connection: close
+|     Found. Redirecting to /login.php
+|   HTTPOptions, RTSPRequest: 
+|     HTTP/1.1 200 OK
+|     X-Powered-By: PHP/5.5
+|     Allow: GET,HEAD
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 8
+|     ETag: W/"8-ZRAf8oNBS3Bjb/SU2GYZCmbtmXg"
+|     Date: Sun, 27 Nov 2022 15:04:40 GMT
+|     Connection: close
+|_    GET,HEAD
+| http-title: Log in 
+|_Requested resource was /login.php
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-open-proxy: Proxy might be redirecting requests
+8008/tcp open  http
+|_http-title: Did not follow redirect to https://192.168.10.32:8015/
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 302 Found
+|     Location: https://:8015/nice%20ports%2C/Tri%6Eity.txt%2ebak
+|     Connection: close
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|     Content-Security-Policy: frame-ancestors 'self'
+|   GenericLines, HTTPOptions, RTSPRequest, SIPOptions: 
+|     HTTP/1.1 302 Found
+|     Location: https://:8015
+|     Connection: close
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|     Content-Security-Policy: frame-ancestors 'self'
+|   GetRequest: 
+|     HTTP/1.1 302 Found
+|     Location: https://:8015/
+|     Connection: close
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|_    Content-Security-Policy: frame-ancestors 'self'
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+8081/tcp open  http    Node.js Express framework
+| http-auth: 
+| HTTP/1.1 401 Unauthorized\x0D
+|_  Basic realm=Authorization Required
+|_http-title: Error
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8000-TCP:V=7.93%I=7%D=11/27%Time=63837C89%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,E6,"HTTP/1\.1\x20302\x20Found\r\nX-Powered-By:\x20PHP/5\.5\r\
+SF:nLocation:\x20/login\.php\r\nVary:\x20Accept\r\nContent-Type:\x20text/p
+SF:lain;\x20charset=utf-8\r\nContent-Length:\x2032\r\nDate:\x20Sun,\x2027\
+SF:x20Nov\x202022\x2015:04:40\x20GMT\r\nConnection:\x20close\r\n\r\nFound\
+SF:.\x20Redirecting\x20to\x20/login\.php")%r(FourOhFourRequest,1A2,"HTTP/1
+SF:\.1\x20404\x20Not\x20Found\r\nX-Powered-By:\x20PHP/5\.5\r\nContent-Secu
+SF:rity-Policy:\x20default-src\x20'none'\r\nX-Content-Type-Options:\x20nos
+SF:niff\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nContent-Length:
+SF:\x20174\r\nDate:\x20Sun,\x2027\x20Nov\x202022\x2015:04:40\x20GMT\r\nCon
+SF:nection:\x20close\r\n\r\n<!DOCTYPE\x20html>\n<html\x20lang=\"en\">\n<he
+SF:ad>\n<meta\x20charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>
+SF:\n<pre>Cannot\x20GET\x20/nice%20ports%2C/Tri%6Eity\.txt%2ebak</pre>\n</
+SF:body>\n</html>\n")%r(Socks5,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nC
+SF:onnection:\x20close\r\n\r\n")%r(HTTPOptions,DF,"HTTP/1\.1\x20200\x20OK\
+SF:r\nX-Powered-By:\x20PHP/5\.5\r\nAllow:\x20GET,HEAD\r\nContent-Type:\x20
+SF:text/html;\x20charset=utf-8\r\nContent-Length:\x208\r\nETag:\x20W/\"8-Z
+SF:RAf8oNBS3Bjb/SU2GYZCmbtmXg\"\r\nDate:\x20Sun,\x2027\x20Nov\x202022\x201
+SF:5:04:40\x20GMT\r\nConnection:\x20close\r\n\r\nGET,HEAD")%r(RTSPRequest,
+SF:DF,"HTTP/1\.1\x20200\x20OK\r\nX-Powered-By:\x20PHP/5\.5\r\nAllow:\x20GE
+SF:T,HEAD\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nContent-Lengt
+SF:h:\x208\r\nETag:\x20W/\"8-ZRAf8oNBS3Bjb/SU2GYZCmbtmXg\"\r\nDate:\x20Sun
+SF:,\x2027\x20Nov\x202022\x2015:04:40\x20GMT\r\nConnection:\x20close\r\n\r
+SF:\nGET,HEAD")%r(RPCCheck,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConne
+SF:ction:\x20close\r\n\r\n")%r(DNSVersionBindReqTCP,2F,"HTTP/1\.1\x20400\x
+SF:20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(Help,2F,"HTTP/1\.1
+SF:\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(SSLSessio
+SF:nReq,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n
+SF:\r\n")%r(SMBProgNeg,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnectio
+SF:n:\x20close\r\n\r\n")%r(LPDString,2F,"HTTP/1\.1\x20400\x20Bad\x20Reques
+SF:t\r\nConnection:\x20close\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8008-TCP:V=7.93%I=7%D=11/27%Time=63837C84%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,D3,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8015/\
+SF:r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Prot
+SF:ection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nosniff\r\nCo
+SF:ntent-Security-Policy:\x20frame-ancestors\x20'self'\r\n\r\n")%r(FourOhF
+SF:ourRequest,F6,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8015/
+SF:nice%20ports%2C/Tri%6Eity\.txt%2ebak\r\nConnection:\x20close\r\nX-Frame
+SF:-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-C
+SF:ontent-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-an
+SF:cestors\x20'self'\r\n\r\n")%r(GenericLines,D2,"HTTP/1\.1\x20302\x20Foun
+SF:d\r\nLocation:\x20https://:8015\r\nConnection:\x20close\r\nX-Frame-Opti
+SF:ons:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Conten
+SF:t-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancesto
+SF:rs\x20'self'\r\n\r\n")%r(HTTPOptions,D2,"HTTP/1\.1\x20302\x20Found\r\nL
+SF:ocation:\x20https://:8015\r\nConnection:\x20close\r\nX-Frame-Options:\x
+SF:20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type
+SF:-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancestors\x20
+SF:'self'\r\n\r\n")%r(RTSPRequest,D2,"HTTP/1\.1\x20302\x20Found\r\nLocatio
+SF:n:\x20https://:8015\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAME
+SF:ORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Optio
+SF:ns:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancestors\x20'self'
+SF:\r\n\r\n")%r(SIPOptions,D2,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20h
+SF:ttps://:8015\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\
+SF:r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20
+SF:nosniff\r\nContent-Security-Policy:\x20frame-ancestors\x20'self'\r\n\r\
+SF:n");
+Service Info: Host: group12web.hp.ti.howest.be; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Nov 27 16:07:05 2022 -- 1 IP address (1 host up) scanned in 158.20 seconds

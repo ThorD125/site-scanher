@@ -1,0 +1,117 @@
+# Nmap 7.93 scan initiated Sun Nov 27 15:55:41 2022 as: nmap -oN ./scan/nmap/192.168.10.29.txt -r --open -v -A 192.168.10.29
+Nmap scan report for 192.168.10.29
+Host is up (0.030s latency).
+Not shown: 995 closed tcp ports (conn-refused)
+PORT     STATE SERVICE  VERSION
+22/tcp   open  ssh      OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 96205fec481056b2a9853616abd4a394 (RSA)
+|   256 2214c40122eafcf8b2920c7210f78a1d (ECDSA)
+|_  256 88445048eeb77b49df4bdb078412b01b (ED25519)
+80/tcp   open  http     Apache httpd 2.4.54 ((Debian))
+|_http-title: Did not follow redirect to https://group09web.hp.ti.howest.be
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.54 (Debian)
+443/tcp  open  ssl/http Apache httpd 2.4.54 ((Debian))
+|_http-title: Sign up page GROUP09
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.54 (Debian)
+| ssl-cert: Subject: 
+| Issuer: 
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2022-11-21T14:33:45
+| Not valid after:  2032-11-18T14:33:45
+| MD5:   faf1bfa273a3e4ff6adac7c011957329
+|_SHA-1: 1aa9b687a9b77762d5967d42bc1e4bdc03003afc
+| tls-alpn: 
+|_  http/1.1
+|_ssl-date: TLS randomness does not represent time
+3306/tcp open  mysql    MySQL 8.0.31
+| mysql-info: 
+|   Protocol: 10
+|   Version: 8.0.31
+|   Thread ID: 384
+|   Capabilities flags: 65535
+|   Some Capabilities: Support41Auth, SwitchToSSLAfterHandshake, SupportsTransactions, IgnoreSigpipes, SupportsCompression, ConnectWithDatabase, Speaks41ProtocolOld, InteractiveClient, ODBCClient, LongColumnFlag, DontAllowDatabaseTableColumn, LongPassword, Speaks41ProtocolNew, FoundRows, IgnoreSpaceBeforeParenthesis, SupportsLoadDataLocal, SupportsAuthPlugins, SupportsMultipleStatments, SupportsMultipleResults
+|   Status: Autocommit
+|   Salt: K\x1DH2\x16\x01\x03qc\x03gt\x12\x1By\x0Ft+x0
+|_  Auth Plugin Name: caching_sha2_password
+| ssl-cert: Subject: commonName=MySQL_Server_8.0.31_Auto_Generated_Server_Certificate
+| Issuer: commonName=MySQL_Server_8.0.31_Auto_Generated_CA_Certificate
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2022-11-23T12:57:23
+| Not valid after:  2032-11-20T12:57:23
+| MD5:   8f1671b349f778f698fb592d100afa4b
+|_SHA-1: 99d7e611f9dad5e5c5cb9a6da4c91d332ce3cab2
+|_ssl-date: TLS randomness does not represent time
+8008/tcp open  http
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 302 Found
+|     Location: https://:8015/nice%20ports%2C/Tri%6Eity.txt%2ebak
+|     Connection: close
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|     Content-Security-Policy: frame-ancestors 'self'
+|   GenericLines, HTTPOptions, RTSPRequest, SIPOptions: 
+|     HTTP/1.1 302 Found
+|     Location: https://:8015
+|     Connection: close
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|     Content-Security-Policy: frame-ancestors 'self'
+|   GetRequest: 
+|     HTTP/1.1 302 Found
+|     Location: https://:8015/
+|     Connection: close
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|_    Content-Security-Policy: frame-ancestors 'self'
+|_http-title: Did not follow redirect to https://192.168.10.29:8015/
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port8008-TCP:V=7.93%I=7%D=11/27%Time=63837A76%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,D3,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8015/\
+SF:r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Prot
+SF:ection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nosniff\r\nCo
+SF:ntent-Security-Policy:\x20frame-ancestors\x20'self'\r\n\r\n")%r(FourOhF
+SF:ourRequest,F6,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20https://:8015/
+SF:nice%20ports%2C/Tri%6Eity\.txt%2ebak\r\nConnection:\x20close\r\nX-Frame
+SF:-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-C
+SF:ontent-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-an
+SF:cestors\x20'self'\r\n\r\n")%r(GenericLines,D2,"HTTP/1\.1\x20302\x20Foun
+SF:d\r\nLocation:\x20https://:8015\r\nConnection:\x20close\r\nX-Frame-Opti
+SF:ons:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Conten
+SF:t-Type-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancesto
+SF:rs\x20'self'\r\n\r\n")%r(HTTPOptions,D2,"HTTP/1\.1\x20302\x20Found\r\nL
+SF:ocation:\x20https://:8015\r\nConnection:\x20close\r\nX-Frame-Options:\x
+SF:20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type
+SF:-Options:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancestors\x20
+SF:'self'\r\n\r\n")%r(RTSPRequest,D2,"HTTP/1\.1\x20302\x20Found\r\nLocatio
+SF:n:\x20https://:8015\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAME
+SF:ORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Optio
+SF:ns:\x20nosniff\r\nContent-Security-Policy:\x20frame-ancestors\x20'self'
+SF:\r\n\r\n")%r(SIPOptions,D2,"HTTP/1\.1\x20302\x20Found\r\nLocation:\x20h
+SF:ttps://:8015\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\
+SF:r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20
+SF:nosniff\r\nContent-Security-Policy:\x20frame-ancestors\x20'self'\r\n\r\
+SF:n");
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Nov 27 15:58:20 2022 -- 1 IP address (1 host up) scanned in 158.95 seconds
