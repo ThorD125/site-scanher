@@ -4,27 +4,27 @@ import urllib.request
 import httpx
 
 
-import helperfuncts
+from helperfuncts import *
+
 
 # ip = "192.168.10.21"
 # ip = "https://thor-demeestere.be"
-ip = "MYVM"
+# ip = "MYVM"
+ip = "google.com"
+
 # ip = "http://github.com/"
 # ip = "pixl.rip"
-# os.system(f'httpx {ip}')
+
+# os.system(f'python3 ./libs/programs/CORScanner/cors_scan.py -u {ip}')
+
 # os.syste(f'{ip}')
 
-
-# os.syste(f'{ip}')
-
-# lib onelist for all
 
 # ffuf
 # dirsearch
 # fierce pl
 # https://github.com/TheRook/subbrute
 
-# https://github.com/jkcso/Intel-One
 # https://github.com/ThoughtfulDev/EagleEye
 
 # https://github.com/infosecn1nja/Red-Teaming-Toolkit
@@ -32,6 +32,7 @@ ip = "MYVM"
 # https://github.com/securebinary/firebaseExploiter
 
 
+# 5985-5986 windows rdp incomming connections port windows rdp bruteforcer ofz testen
 
 
 # from CORScanner.cors_scan import cors_check
@@ -40,7 +41,3 @@ ip = "MYVM"
 
 
 
-# a program that tests ssh connectons
-os.system(f'python3 libs/programs/SSHBrute/ssh-brute.py --hostname {ip} --port 22 --user killerb --passlist sshpass.txt --background >> sshs.txt')
-os.system(f'python3 libs/programs/SSHBrute/ssh-brute.py --hostname {ip} --port 22 --user naruto --passlist sshpass.txt --background >> sshs.txt')
-os.system(f'python3 libs/programs/SSHBrute/ssh-brute.py --hostname {ip} --port 22 --user ther --passlist sshpass.txt --background >> sshs.txt')

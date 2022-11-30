@@ -1,0 +1,4 @@
+https://192.168.10.24:9443/edgevi
+https://192.168.10.24:9443/edgevi
+https://192.168.10.24:9443/edgevi
+http://192.168.10.24/robots.txt
