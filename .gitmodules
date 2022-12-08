@@ -4,6 +4,3 @@
 [submodule "libs/programs/Intel-One"]
 	path = libs/programs/Intel-One
 	url = https://github.com/jkcso/Intel-One.git
-[submodule "libs/programs/SSHBrute"]
-	path = libs/programs/SSHBrute
-	url = https://github.com/thexcoderz/SSHBrute.git
