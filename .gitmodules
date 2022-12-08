@@ -7,3 +7,9 @@
 [submodule "libs/programs/SSHBrute"]
 	path = libs/programs/SSHBrute
 	url = https://github.com/ThorD125/SSHBrute.git
+[submodule "libs/programs/EagleEye"]
+	path = libs/programs/EagleEye
+	url = https://github.com/ThoughtfulDev/EagleEye.git
+[submodule "libs/programs/xss2png"]
+	path = libs/programs/xss2png
+	url = https://github.com/vavkamil/xss2png.git
