@@ -13,3 +13,12 @@
 [submodule "libs/programs/xss2png"]
 	path = libs/programs/xss2png
 	url = https://github.com/vavkamil/xss2png.git
+[submodule "libs/wordlists/OneListForAll"]
+	path = libs/wordlists/OneListForAll
+	url = https://github.com/six2dez/OneListForAll.git
+[submodule "libs/wordlists/RobotsDisallowed"]
+	path = libs/wordlists/RobotsDisallowed
+	url = https://github.com/danielmiessler/RobotsDisallowed.git
+[submodule "libs/wordlists/SecLists"]
+	path = libs/wordlists/SecLists
+	url = https://github.com/danielmiessler/SecLists.git
