@@ -1,0 +1,20 @@
+<link rel="stylesheet" type="text/css" href="kube.min.css">
+<link rel="stylesheet" type="text/css" href="master.css">
+<script>
+
+document.addEventListener('DOMContentLoaded', function (all){
+
+document.querySelectorAll("tbody").forEach(function(e){
+    e.querySelectorAll("tr").forEach(function(x){
+        if (x.querySelectorAll("td")[1].innerText == 0) {
+            x.remove()
+        }
+    })
+    if (e.innerHTML.trim() == ""){
+        e.closest("div").remove()
+    }
+})
+
+})
+
+</script>
