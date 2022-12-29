@@ -1,6 +1,6 @@
+require('dotenv').config()
 const puppeteer = require('puppeteer');
 const fs = require('fs');
-
 
 var dir = 'urls';
 if (fs.existsSync(dir)) {
@@ -18,10 +18,10 @@ async function run() {
 
 
     await page.goto('https://login.intigriti.com/account/login');
-    await page.type('#Input_Email', 'thor.demeestere@telenet.be');
+    await page.type('#Input_Email', process.env.INTIGRITI_USERNAME);
     await page.evaluate(() => { document.querySelector("form").submit(); });
     await page.waitForNavigation();
-    await page.type('#Input_Password', '8E.WW5.r5wDhzY9');
+    await page.type('#Input_Password', process.env.INTIGRITI_PASSWORD);
     await page.evaluate(() => { document.querySelector("form").submit(); });
     await page.waitForNavigation();
     await page.waitForNavigation();
@@ -73,14 +73,19 @@ async function getScreenshot(browser, url) {
     const domains = await page.evaluate(() => {
         let domains = ""
         document.querySelectorAll(".domainSpecification .domain p")
-            .forEach(domain => domains += `${domain.textContent.trim()}\n`)
+            .forEach(function (domain) {
+                if (domain.textContent.includes(".") && !domain.textContent.includes("(") && !domain.textContent.includes(")")) {
+                    domains += `${domain.textContent.trim().replace(/^https?:\/\//, "")}\n`;
+                }
+            });
         return domains;
     });
 
-    fs.writeFileSync(`urls/${url.cleanup().removebaseurl()}.txt`, domains);
+    if (domains.length > 0) {
+        fs.writeFileSync(`urls/${url.cleanup().removebaseurl()}.txt`, domains);
+    }
 
-    // const screenshot = await page.screenshot({ path: `images/${url.cleanup()}.png` });
-    // return screenshot;
+    page.close();
 }
 
 run();
