@@ -1,7 +1,13 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-fs.rm('test.png', (err) => { });
+
+var dir = 'urls';
+if (fs.existsSync(dir)) {
+    fs.rmSync(dir, { recursive: true, force: true });
+}
+
+fs.mkdirSync(dir);
 
 let browser
 
@@ -53,13 +59,6 @@ async function run() {
     // await browser.close();
 }
 
-run();
-// await page.screenshot({ path: 'test.png' });
-
-
-
-const delay = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
-
 
 
 async function getScreenshot(browser, url) {
@@ -71,11 +70,33 @@ async function getScreenshot(browser, url) {
     await page.waitForNavigation();
     await delay(10000);
 
+    const domains = await page.evaluate(() => {
+        let domains = ""
+        document.querySelectorAll(".domainSpecification .domain p")
+            .forEach(domain => domains += `${domain.textContent.trim()}\n`)
+        return domains;
+    });
 
-    const screenshot = await page.screenshot({ path: `images/${url.cleanup()}.png` });
-    return screenshot;
+    fs.writeFileSync(`urls/${url.cleanup().removebaseurl()}.txt`, domains);
+
+    // const screenshot = await page.screenshot({ path: `images/${url.cleanup()}.png` });
+    // return screenshot;
 }
+
+run();
+// await page.screenshot({ path: 'test.png' });
+
+
+
+const delay = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
 
 String.prototype.cleanup = function () {
     return this.toLowerCase().replace(/[^a-zA-Z0-9]+/g, "-");
 }
+
+
+String.prototype.removebaseurl = function () {
+    return this.replace("https-app-intigriti-com-researcher-program-redirect-", "");
+}
+
