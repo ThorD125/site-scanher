@@ -1,3 +1,4 @@
 ./scan/*
 test.txt
 .history
+node_modules/*
