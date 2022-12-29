@@ -2,12 +2,8 @@ require('dotenv').config()
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-var dir = 'urls';
-if (fs.existsSync(dir)) {
-    fs.rmSync(dir, { recursive: true, force: true });
-}
+createDir('urls');
 
-fs.mkdirSync(dir);
 
 let browser
 
@@ -49,7 +45,7 @@ async function run() {
             return anchors.map(a => a.href);
         });
         for (const url of links) {
-            getScreenshot(browser, url);
+            parseUrls(browser, url);
         }
 
         await page.evaluate(() => { document.querySelector(".pages+.fast-page-navigation .page-skipper").click() });
@@ -61,7 +57,7 @@ async function run() {
 
 
 
-async function getScreenshot(browser, url) {
+async function parseUrls(browser, url) {
     const page = await browser.newPage();
 
 
@@ -89,11 +85,12 @@ async function getScreenshot(browser, url) {
 }
 
 run();
-// await page.screenshot({ path: 'test.png' });
 
 
 
-const delay = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+async function delay(milliseconds) {
+    new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
 
 
 String.prototype.cleanup = function () {
@@ -103,5 +100,13 @@ String.prototype.cleanup = function () {
 
 String.prototype.removebaseurl = function () {
     return this.replace("https-app-intigriti-com-researcher-program-redirect-", "");
+}
+
+
+function createDir(dir) {
+    if (fs.existsSync(dir)) {
+        fs.rmSync(dir, { recursive: true, force: true });
+    }
+    fs.mkdirSync(dir);
 }
 
