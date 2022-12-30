@@ -1,10 +1,9 @@
+./scan/*
+
 */.history/*
-.history/*
 */node_modules/*
-node_modules/*
-.env
+*/urls/*
+*/.history/*
 */.env
-__pycache__/*
 */__pycache__/*
-.vscode/*
 */.vscode/*

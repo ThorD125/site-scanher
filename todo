@@ -1,0 +1,8 @@
+Installer toevoege npm instal, git submodule update
+Gitignore node modules, .env, .hostory,.vscode, .code toevoege
+
+Http https verwijdere van neem urls inti
+
+Http of https uitzoeken vab urls en of het een redirect eef ofni
+
+Screenshot een variable meegeve in command "node screensite url.url"voor url
