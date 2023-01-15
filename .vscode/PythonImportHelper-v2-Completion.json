@@ -1,0 +1,261 @@
+[
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "httpx",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "httpx",
+        "description": "httpx",
+        "detail": "httpx",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.request",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.request",
+        "description": "urllib.request",
+        "detail": "urllib.request",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "helperfuncts",
+        "description": "helperfuncts",
+        "isExtraImport": true,
+        "detail": "helperfuncts",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "helperfuncts",
+        "description": "helperfuncts",
+        "isExtraImport": true,
+        "detail": "helperfuncts",
+        "documentation": {}
+    },
+    {
+        "label": "replace_multiple_spaces",
+        "kind": 2,
+        "importPath": "libs.programs.wapiti.wapiti",
+        "description": "libs.programs.wapiti.wapiti",
+        "peekOfCode": "def replace_multiple_spaces(string):\n\tpattern = re.compile(r\"\\s+\")\n\tnew_string = pattern.sub(\" \", string)\n\treturn new_string\ndef lazy_grep(string):\n\treturn replace_multiple_spaces(string).split(\"</tr>\")\ninput_string = open(parameter, \"r\").read()\n#input_string = parameter\n#print(input_string)\nmy_list = [\">0</td>\", \"Content Security Policy Configuration\", \"</tbody>\"]",
+        "detail": "libs.programs.wapiti.wapiti",
+        "documentation": {}
+    },
+    {
+        "label": "lazy_grep",
+        "kind": 2,
+        "importPath": "libs.programs.wapiti.wapiti",
+        "description": "libs.programs.wapiti.wapiti",
+        "peekOfCode": "def lazy_grep(string):\n\treturn replace_multiple_spaces(string).split(\"</tr>\")\ninput_string = open(parameter, \"r\").read()\n#input_string = parameter\n#print(input_string)\nmy_list = [\">0</td>\", \"Content Security Policy Configuration\", \"</tbody>\"]\nfor my_string in lazy_grep(input_string):\n\tif all(x not in my_string for x in my_list):\n\t\tf =open(\"tables\", \"a\")\n\t\tf.write(mystring.trim())",
+        "detail": "libs.programs.wapiti.wapiti",
+        "documentation": {}
+    },
+    {
+        "label": "parser",
+        "kind": 5,
+        "importPath": "libs.programs.wapiti.wapiti",
+        "description": "libs.programs.wapiti.wapiti",
+        "peekOfCode": "parser = argparse.ArgumentParser()\nparser.add_argument('parameter', type=str, help='an integer parameter')\nargs = parser.parse_args()\nparameter = args.parameter\ndef replace_multiple_spaces(string):\n\tpattern = re.compile(r\"\\s+\")\n\tnew_string = pattern.sub(\" \", string)\n\treturn new_string\ndef lazy_grep(string):\n\treturn replace_multiple_spaces(string).split(\"</tr>\")",
+        "detail": "libs.programs.wapiti.wapiti",
+        "documentation": {}
+    },
+    {
+        "label": "args",
+        "kind": 5,
+        "importPath": "libs.programs.wapiti.wapiti",
+        "description": "libs.programs.wapiti.wapiti",
+        "peekOfCode": "args = parser.parse_args()\nparameter = args.parameter\ndef replace_multiple_spaces(string):\n\tpattern = re.compile(r\"\\s+\")\n\tnew_string = pattern.sub(\" \", string)\n\treturn new_string\ndef lazy_grep(string):\n\treturn replace_multiple_spaces(string).split(\"</tr>\")\ninput_string = open(parameter, \"r\").read()\n#input_string = parameter",
+        "detail": "libs.programs.wapiti.wapiti",
+        "documentation": {}
+    },
+    {
+        "label": "parameter",
+        "kind": 5,
+        "importPath": "libs.programs.wapiti.wapiti",
+        "description": "libs.programs.wapiti.wapiti",
+        "peekOfCode": "parameter = args.parameter\ndef replace_multiple_spaces(string):\n\tpattern = re.compile(r\"\\s+\")\n\tnew_string = pattern.sub(\" \", string)\n\treturn new_string\ndef lazy_grep(string):\n\treturn replace_multiple_spaces(string).split(\"</tr>\")\ninput_string = open(parameter, \"r\").read()\n#input_string = parameter\n#print(input_string)",
+        "detail": "libs.programs.wapiti.wapiti",
+        "documentation": {}
+    },
+    {
+        "label": "\tpattern",
+        "kind": 5,
+        "importPath": "libs.programs.wapiti.wapiti",
+        "description": "libs.programs.wapiti.wapiti",
+        "peekOfCode": "\tpattern = re.compile(r\"\\s+\")\n\tnew_string = pattern.sub(\" \", string)\n\treturn new_string\ndef lazy_grep(string):\n\treturn replace_multiple_spaces(string).split(\"</tr>\")\ninput_string = open(parameter, \"r\").read()\n#input_string = parameter\n#print(input_string)\nmy_list = [\">0</td>\", \"Content Security Policy Configuration\", \"</tbody>\"]\nfor my_string in lazy_grep(input_string):",
+        "detail": "libs.programs.wapiti.wapiti",
+        "documentation": {}
+    },
+    {
+        "label": "\tnew_string",
+        "kind": 5,
+        "importPath": "libs.programs.wapiti.wapiti",
+        "description": "libs.programs.wapiti.wapiti",
+        "peekOfCode": "\tnew_string = pattern.sub(\" \", string)\n\treturn new_string\ndef lazy_grep(string):\n\treturn replace_multiple_spaces(string).split(\"</tr>\")\ninput_string = open(parameter, \"r\").read()\n#input_string = parameter\n#print(input_string)\nmy_list = [\">0</td>\", \"Content Security Policy Configuration\", \"</tbody>\"]\nfor my_string in lazy_grep(input_string):\n\tif all(x not in my_string for x in my_list):",
+        "detail": "libs.programs.wapiti.wapiti",
+        "documentation": {}
+    },
+    {
+        "label": "input_string",
+        "kind": 5,
+        "importPath": "libs.programs.wapiti.wapiti",
+        "description": "libs.programs.wapiti.wapiti",
+        "peekOfCode": "input_string = open(parameter, \"r\").read()\n#input_string = parameter\n#print(input_string)\nmy_list = [\">0</td>\", \"Content Security Policy Configuration\", \"</tbody>\"]\nfor my_string in lazy_grep(input_string):\n\tif all(x not in my_string for x in my_list):\n\t\tf =open(\"tables\", \"a\")\n\t\tf.write(mystring.trim())\n\t\tf.close()",
+        "detail": "libs.programs.wapiti.wapiti",
+        "documentation": {}
+    },
+    {
+        "label": "#input_string",
+        "kind": 5,
+        "importPath": "libs.programs.wapiti.wapiti",
+        "description": "libs.programs.wapiti.wapiti",
+        "peekOfCode": "#input_string = parameter\n#print(input_string)\nmy_list = [\">0</td>\", \"Content Security Policy Configuration\", \"</tbody>\"]\nfor my_string in lazy_grep(input_string):\n\tif all(x not in my_string for x in my_list):\n\t\tf =open(\"tables\", \"a\")\n\t\tf.write(mystring.trim())\n\t\tf.close()",
+        "detail": "libs.programs.wapiti.wapiti",
+        "documentation": {}
+    },
+    {
+        "label": "my_list",
+        "kind": 5,
+        "importPath": "libs.programs.wapiti.wapiti",
+        "description": "libs.programs.wapiti.wapiti",
+        "peekOfCode": "my_list = [\">0</td>\", \"Content Security Policy Configuration\", \"</tbody>\"]\nfor my_string in lazy_grep(input_string):\n\tif all(x not in my_string for x in my_list):\n\t\tf =open(\"tables\", \"a\")\n\t\tf.write(mystring.trim())\n\t\tf.close()",
+        "detail": "libs.programs.wapiti.wapiti",
+        "documentation": {}
+    },
+    {
+        "label": "gethttporhtp",
+        "kind": 2,
+        "importPath": "helperfuncts",
+        "description": "helperfuncts",
+        "peekOfCode": "def gethttporhtp(ip):\n    testingurl = filterip(ip)\n    http = httpx.get(f\"http://{testingurl}\", follow_redirects=True, verify=False)\n    return http.url\ndef filterip(ip):\n    return re.sub(\"\\*\\.\", '', re.sub(\"https?//\", '', re.sub(\"www.\", '', ip)))",
+        "detail": "helperfuncts",
+        "documentation": {}
+    },
+    {
+        "label": "filterip",
+        "kind": 2,
+        "importPath": "helperfuncts",
+        "description": "helperfuncts",
+        "peekOfCode": "def filterip(ip):\n    return re.sub(\"\\*\\.\", '', re.sub(\"https?//\", '', re.sub(\"www.\", '', ip)))",
+        "detail": "helperfuncts",
+        "documentation": {}
+    },
+    {
+        "label": "ip",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "ip = \"google.com\"\n# ip = \"http://github.com/\"\n# ip = \"pixl.rip\"\n# os.system(f'python3 ./libs/programs/CORScanner/cors_scan.py -u {ip}')\n# os.syste(f'{ip}')\n# ffuf\n# dirsearch\n# fierce pl\n# https://github.com/TheRook/subbrute\n# https://github.com/ThoughtfulDev/EagleEye",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "dostuff",
+        "kind": 2,
+        "importPath": "working",
+        "description": "working",
+        "peekOfCode": "def dostuff(ip):\n    print(ip)\n    try:\n        # os.system(f'nmap {filterip(ip)} -oN {basedir}/nmap/{ip}.txt {options[\"nmap\"]}')\n        # # os.system(f'nuclei -u {gethttporhtp(ip)} -o {basedir}/nuclei/{filterip(ip)}.txt {options[\"nuclei\"]}')\n        # os.system(f'gau {ip} --mc \"200\" --o {basedir}/gau/{filterip(ip)}.txt')\n        os.system(f'wget {gethttporhtp(ip)}/robots.txt -O {basedir}/robots/{filterip(ip)}.txt -k')\n        # os.system(f'python3 libs/programs/SSHBrute/ssh-brute.py --hostname {ip} --port 22 --user killerb --passlist sshpass.txt --background >> {basedir}/sshs.txt')\n    except:\n        pass",
+        "detail": "working",
+        "documentation": {}
+    },
+    {
+        "label": "ip2",
+        "kind": 5,
+        "importPath": "working",
+        "description": "working",
+        "peekOfCode": "ip2 = \"\"\nipsplit2 = \"\"\noptions = {\n    \"nmap\": \"-r -sV --open -v -A\",\n    \"subfinder\": \"-silent\",\n    \"nuclei\": \"-rdb -fr -stats -ut\",\n}\n# ip1 = \"*.google.com\"\nip1 = \"192.168.10.21\"\nip2 = \"192.168.10.50\"",
+        "detail": "working",
+        "documentation": {}
+    },
+    {
+        "label": "ipsplit2",
+        "kind": 5,
+        "importPath": "working",
+        "description": "working",
+        "peekOfCode": "ipsplit2 = \"\"\noptions = {\n    \"nmap\": \"-r -sV --open -v -A\",\n    \"subfinder\": \"-silent\",\n    \"nuclei\": \"-rdb -fr -stats -ut\",\n}\n# ip1 = \"*.google.com\"\nip1 = \"192.168.10.21\"\nip2 = \"192.168.10.50\"\nipsplit1 = ip1.split(\".\")",
+        "detail": "working",
+        "documentation": {}
+    },
+    {
+        "label": "options",
+        "kind": 5,
+        "importPath": "working",
+        "description": "working",
+        "peekOfCode": "options = {\n    \"nmap\": \"-r -sV --open -v -A\",\n    \"subfinder\": \"-silent\",\n    \"nuclei\": \"-rdb -fr -stats -ut\",\n}\n# ip1 = \"*.google.com\"\nip1 = \"192.168.10.21\"\nip2 = \"192.168.10.50\"\nipsplit1 = ip1.split(\".\")\nif ip2 != \"\":",
+        "detail": "working",
+        "documentation": {}
+    },
+    {
+        "label": "ip1",
+        "kind": 5,
+        "importPath": "working",
+        "description": "working",
+        "peekOfCode": "ip1 = \"192.168.10.21\"\nip2 = \"192.168.10.50\"\nipsplit1 = ip1.split(\".\")\nif ip2 != \"\":\n    ipsplit2 = ip2.split(\".\")\nbasedir = \"./scan\"\nif not os.path.exists(f\"{basedir}\"):\n    os.mkdir(f\"{basedir}\")\ndirs = [\"nmap\", \"nuclei\", \"sqlmap\", \"httpx\", \"subfinder\", \"gau\", \"robots\"]\nfor dir in dirs:",
+        "detail": "working",
+        "documentation": {}
+    },
+    {
+        "label": "ip2",
+        "kind": 5,
+        "importPath": "working",
+        "description": "working",
+        "peekOfCode": "ip2 = \"192.168.10.50\"\nipsplit1 = ip1.split(\".\")\nif ip2 != \"\":\n    ipsplit2 = ip2.split(\".\")\nbasedir = \"./scan\"\nif not os.path.exists(f\"{basedir}\"):\n    os.mkdir(f\"{basedir}\")\ndirs = [\"nmap\", \"nuclei\", \"sqlmap\", \"httpx\", \"subfinder\", \"gau\", \"robots\"]\nfor dir in dirs:\n    if not os.path.exists(f\"{basedir}/{dir}\"):",
+        "detail": "working",
+        "documentation": {}
+    },
+    {
+        "label": "ipsplit1",
+        "kind": 5,
+        "importPath": "working",
+        "description": "working",
+        "peekOfCode": "ipsplit1 = ip1.split(\".\")\nif ip2 != \"\":\n    ipsplit2 = ip2.split(\".\")\nbasedir = \"./scan\"\nif not os.path.exists(f\"{basedir}\"):\n    os.mkdir(f\"{basedir}\")\ndirs = [\"nmap\", \"nuclei\", \"sqlmap\", \"httpx\", \"subfinder\", \"gau\", \"robots\"]\nfor dir in dirs:\n    if not os.path.exists(f\"{basedir}/{dir}\"):\n        os.mkdir(f\"{basedir}/{dir}\")",
+        "detail": "working",
+        "documentation": {}
+    },
+    {
+        "label": "basedir",
+        "kind": 5,
+        "importPath": "working",
+        "description": "working",
+        "peekOfCode": "basedir = \"./scan\"\nif not os.path.exists(f\"{basedir}\"):\n    os.mkdir(f\"{basedir}\")\ndirs = [\"nmap\", \"nuclei\", \"sqlmap\", \"httpx\", \"subfinder\", \"gau\", \"robots\"]\nfor dir in dirs:\n    if not os.path.exists(f\"{basedir}/{dir}\"):\n        os.mkdir(f\"{basedir}/{dir}\")\ndef dostuff(ip):\n    print(ip)\n    try:",
+        "detail": "working",
+        "documentation": {}
+    },
+    {
+        "label": "dirs",
+        "kind": 5,
+        "importPath": "working",
+        "description": "working",
+        "peekOfCode": "dirs = [\"nmap\", \"nuclei\", \"sqlmap\", \"httpx\", \"subfinder\", \"gau\", \"robots\"]\nfor dir in dirs:\n    if not os.path.exists(f\"{basedir}/{dir}\"):\n        os.mkdir(f\"{basedir}/{dir}\")\ndef dostuff(ip):\n    print(ip)\n    try:\n        # os.system(f'nmap {filterip(ip)} -oN {basedir}/nmap/{ip}.txt {options[\"nmap\"]}')\n        # # os.system(f'nuclei -u {gethttporhtp(ip)} -o {basedir}/nuclei/{filterip(ip)}.txt {options[\"nuclei\"]}')\n        # os.system(f'gau {ip} --mc \"200\" --o {basedir}/gau/{filterip(ip)}.txt')",
+        "detail": "working",
+        "documentation": {}
+    }
+]
