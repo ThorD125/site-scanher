@@ -61,3 +61,4 @@ else:
         ipsplit1[-1]=str(int(ipsplit1[-1])+1)
 
 # os.system(f'subfinder -d {filterip(ip)} -o {basedir}/subfinder/{filterip(ip)}.txt {options["subfinder"]}')
+# blob:https://thor.demedestere.be/02b4e666-8111-4d1b-94e6-aeac138dc3e4
