@@ -1,3 +1,0 @@
-# Nmap 7.93 scan initiated Sun Nov 27 16:16:43 2022 as: nmap -oN ./scan/nmap/192.168.10.39.txt -r --open -v -A 192.168.10.39
-Read data files from: /usr/bin/../share/nmap
-# Nmap done at Sun Nov 27 16:16:47 2022 -- 1 IP address (0 hosts up) scanned in 3.53 seconds

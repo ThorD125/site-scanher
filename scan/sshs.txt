@@ -1,4 +1,0 @@
-ssh killerb@192.168.10.29:naruto
-ssh killerb@192.168.10.35:naruto
-ssh killerb@192.168.10.40:naruto
-ssh killerb@192.168.10.45:naruto
