@@ -17,3 +17,11 @@ cp /bin/nano /tmp
 chmod u+s /tmp/nano
 ls -l /tmp/nano
 /tmp/nano /etc/shadow
+
+osint tool maken
+elk woord die start me hoofd letter oplijsten
+en uit woordlijst filteren bv de het een
+
+
+
+
