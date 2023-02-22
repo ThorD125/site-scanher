@@ -23,5 +23,8 @@ elk woord die start me hoofd letter oplijsten
 en uit woordlijst filteren bv de het een
 
 
+onelinere ip sweeper powershell still need to test and trie in bash
+    $result1 = ((Get-NetIPAddress | Where-Object {$_.AddressFamily -eq "IPv4" -and ($_.InterfaceAlias -eq "Ethernet" -or $_.InterfaceAlias -eq "Wifi")}).IPAddress); foreach ($ip in $result1.Split("`n")) {  1..254 | % {$result = Test-NetConnection -ComputerName "$($ip.Split('.')[0..2] -join '.').$_" -Port 80 -InformationLevel Quiet; if($result.TcpTestSucceeded) {"Port 80 is open."} else {"Port 80 is closed."}}}
+
 
 
