@@ -1,6 +1,1 @@
-https://docs.hackerone.com
-http://a.ns.hackerone.com
-https://www.hackerone.com
-https://api.hackerone.com
-https://resources.hackerone.com
-http://b.ns.hackerone.com
+https://apacudn.epicgames.com
