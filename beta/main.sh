@@ -1,5 +1,7 @@
 #!/bin/bash
 
+url="example.com"
+# url="hackerone.com"
 
-echo test
 
+sudo subfinder -d $url -o subfinder.txt
