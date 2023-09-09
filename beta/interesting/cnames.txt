@@ -1,7 +1,7 @@
-mta-sts.hackerone.com [hacker0x01.github.io] 
-resources.hackerone.com [read.uberflip.com] 
-mta-sts.managed.hackerone.com [hacker0x01.github.io] 
-gslink.hackerone.com [d3rxkn2g2bbsjp.cloudfront.net] 
-docs.hackerone.com [hacker0x01.github.io] 
-mta-sts.forwarding.hackerone.com [hacker0x01.github.io] 
-support.hackerone.com [2fe254e58a0ea8096400b2fda121ee35.freshdesk.com] 
+hacker0x01.github.io
+hacker0x01.github.io
+hacker0x01.github.io
+2fe254e58a0ea8096400b2fda121ee35.freshdesk.com
+hacker0x01.github.io
+read.uberflip.com
+d3rxkn2g2bbsjp.cloudfront.net

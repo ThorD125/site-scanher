@@ -52,6 +52,23 @@
         "documentation": {}
     },
     {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
         "label": "gethttporhtp",
         "kind": 2,
         "importPath": "alpha.helperfuncts",
@@ -157,6 +174,24 @@
         "description": "alpha.working",
         "peekOfCode": "dirs = [\"nmap\", \"nuclei\", \"sqlmap\", \"httpx\", \"subfinder\", \"gau\", \"robots\"]\nfor dir in dirs:\n    if not os.path.exists(f\"{basedir}/{dir}\"):\n        os.mkdir(f\"{basedir}/{dir}\")\ndef dostuff(ip):\n    print(ip)\n    try:\n        # os.system(f'nmap {filterip(ip)} -oN {basedir}/nmap/{ip}.txt {options[\"nmap\"]}')\n        # # os.system(f'nuclei -u {gethttporhtp(ip)} -o {basedir}/nuclei/{filterip(ip)}.txt {options[\"nuclei\"]}')\n        # os.system(f'gau {ip} --mc \"200\" --o {basedir}/gau/{filterip(ip)}.txt')",
         "detail": "alpha.working",
+        "documentation": {}
+    },
+    {
+        "label": "has_post_message",
+        "kind": 2,
+        "importPath": "beta.test",
+        "description": "beta.test",
+        "peekOfCode": "def has_post_message(url):\n    try:\n        # Send an HTTP GET request to the URL\n        response = requests.get(url)\n        # Check if the request was successful\n        if response.status_code == 200:\n            # Parse the HTML content of the page\n            soup = BeautifulSoup(response.content, 'html.parser')\n            # Search for JavaScript code that uses PostMessage\n            script_tags = soup.find_all('script')",
+        "detail": "beta.test",
+        "documentation": {}
+    },
+    {
+        "label": "urls",
+        "kind": 5,
+        "importPath": "beta.test",
+        "description": "beta.test",
+        "peekOfCode": "urls = []\nwith open('filename.txt', 'r') as f:\n    for line in f:\n        urls.append(line.strip())\ndef has_post_message(url):\n    try:\n        # Send an HTTP GET request to the URL\n        response = requests.get(url)\n        # Check if the request was successful\n        if response.status_code == 200:",
+        "detail": "beta.test",
         "documentation": {}
     }
 ]
